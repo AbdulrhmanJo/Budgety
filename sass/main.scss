@@ -1,0 +1,244 @@
+//genral
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: sans-serif;
+  font-weight: 400;
+  position: relative;
+}
+
+//headbar
+.headbar {
+  width: 100vw;
+  height: 20rem;
+  background: linear-gradient(to right, #141e30, #243b55);
+  text-align: center;
+  padding: 3rem;
+  color: white;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+//card
+.card {
+  width: 45rem;
+  height: 25rem;
+  background: linear-gradient(to right, #f7971e, #ffd200);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -10%);
+  border-radius: 1rem;
+  box-shadow: 0rem 0.5rem 1rem rgba(black, 0.1);
+  color: white;
+  font-size: 2rem;
+  padding: 3rem;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  &__text {
+    flex: 100%;
+    align-self: flex-end;
+    color: #243b55;
+    font-size: 1.4rem;
+    text-transform: capitalize;
+    font-weight: 600;
+  }
+
+  &__balance {
+    flex: 100%;
+    align-self: flex-start;
+    font-size: 4rem;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    &--sign {
+      font-size: 5rem;
+      transform: translateY(-0.4rem);
+    }
+  }
+
+  &__statu {
+    flex: 1;
+    background-color: rgba(white, 0.4);
+    padding: 2rem;
+    border-radius: 10px;
+    display: flex;
+    font-size: 1.8rem;
+  }
+
+  &__income {
+    flex: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: #243b55;
+
+    &--sign {
+      margin-right: 8px;
+      color: darkgreen;
+    }
+
+    &--value {
+      margin-top: 4px;
+      flex: 100%;
+      color: darkgreen;
+      font-size: 1.6rem;
+    }
+  }
+
+  &__expenses {
+    flex: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: #243b55;
+
+    &--sign {
+      color: darkred;
+      margin-right: 8px;
+    }
+
+    &--value {
+      margin-top: 4px;
+
+      flex: 100%;
+      color: darkred;
+      font-size: 1.6rem;
+    }
+  }
+}
+
+//btn
+.btn {
+  height: 5rem;
+  width: 5rem;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  font-size: 4rem;
+  border: none;
+  background: linear-gradient(to bottom, #536976, #292e49);
+  color: white;
+  box-shadow: 0rem 1rem 1rem rgba(black, 0.1);
+  transition: all 0.2s;
+  backface-visibility: hidden;
+
+  .sign {
+    transform: translateY(-0.5rem);
+  }
+
+  &:hover {
+    height: 5.4rem;
+    width: 5.4rem;
+    font-size: 4.5rem;
+    box-shadow: 0rem 1rem 1rem rgba(black, 0.2);
+  }
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.popup {
+  width: 35rem;
+  background-color: white;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 87%);
+  box-shadow: 0rem 0rem 2rem rgba(black, 0.1);
+  border-radius: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem 2rem 1.5rem;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.budget-switch {
+  flex: 100%;
+  align-self: flex-start;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  &-input {
+    display: none;
+  }
+
+  &-label {
+    padding: 1rem;
+    font-size: 1.3rem;
+    color: gray;
+    margin-right: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  &-input:checked + &-label {
+    color: #141e30;
+    background: #e7f3ff;
+    border-radius: 4px;
+  }
+
+  &-input:not(:checked) + &-label:hover {
+    background: rgba(gray, 0.09);
+    border-radius: 4px;
+  }
+}
+
+.budget-input {
+  padding: 1.3rem 1rem;
+  border-radius: 5px;
+  border: 1px solid rgb(245, 245, 245);
+  margin-bottom: 1.5rem;
+
+  background-color: rgb(245, 245, 245);
+  font-size: 1.3rem;
+
+  margin-right: 1rem;
+
+  &:focus {
+    border: 1px solid #c7c7c7;
+    outline: 0;
+  }
+
+  &-desc {
+    width: 60%;
+  }
+
+  &-val {
+    width: 36%;
+    margin-right: 0;
+  }
+}
+
+.popup__btn {
+  flex: 1;
+  padding: 1rem 2rem;
+  border: none;
+  background-color: #40497c;
+  border-radius: 3px;
+  font-size: 1.4rem;
+  color: white;
+  
+  &:hover{
+    background-color: #272d4e;
+  }
+}
