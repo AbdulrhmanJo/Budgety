@@ -57,8 +57,7 @@ const controller = (function(data, interface) {
 
       // 5- display the budget on the UI
       interface.displayBudget(budget);
-
-    } else{
+    } else {
       errorMsg(info);
     }
   };
@@ -91,7 +90,6 @@ const controller = (function(data, interface) {
     localStorage.setItem("budget", JSON.stringify(budget));
 
     interface.displayBudget(budget);
-
   };
 
   const setUpPage = () => {
@@ -106,23 +104,29 @@ const controller = (function(data, interface) {
         data.setBudget();
         interface.displayBudget(JSON.parse(localStorage.getItem("budget")));
       }
-    } else{
+    } else {
       localStorage.clear();
     }
   };
 
-  const errorMsg = (info) => {
-    if(isNaN(info.desc) || info.desc !== ""){
+  const errorMsg = info => {
+    if (!isNaN(info.desc) || info.desc === "") {
       document.querySelector(".error_desc").style.display = "block";
-      document.querySelector(".budget-input-desc").style.border = "1px solid darkred";
+      document.querySelector(".budget-input-desc").style.border =
+        "1px solid darkred";
+        console.log("hi");
+        
     }
-    
-    if( !isNaN(info.value) && info.value > 0 || info.value !== ""){
-      
-    }document.querySelector(".error_val").style.display = "block";
-    document.querySelector(".budget-input-val").style.border = "1px solid darkred";
+
+    if (isNaN(info.value) || info.value < 0 || info.value === "") {
+      document.querySelector(".error_val").style.display = "block";
+      document.querySelector(".budget-input-val").style.border =
+        "1px solid darkred";
+        console.log("hi");
+        
+    }
   };
-  
+
   const init = () => {
     setUpEvents();
     setUpPage();
