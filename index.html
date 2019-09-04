@@ -5,59 +5,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://kit.fontawesome.com/23df6dbee5.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>Budguty</title>
 </head>
 
 <body>
 
+    <header class="headbar"></header>
+
     <div class="container">
-        <div class="headbar">
-            <div class="month">August 2019</div>
-        </div>
+
+        <div class="month"></div>
 
         <div class="card">
-            <p class="card__text">current budgut</p>
+            <p class="card__text">balance</p>
             <div class="card__balance">
-                <p class="card__balance--sign">+</p>
-                <p class="card__balance--money">1.300.00 SAR</p>
+                <p class="card__balance--money">0.0 SR</p>
             </div>
             <div class="card__statu">
                 <div class="card__income">
-                    <i class="fas fa-arrow-circle-up card__income--sign"></i>
-                    <p class="card__income--text">Incomes</p>
-                    <p class="card__income--value">+ 3000</p>
+                    <img src="img/arrow-up-on-a-black-circle-background.png" class="card__income--sign">
+                    <p class="card__income--text">Income</p>
+                    <p class="card__income--value">+ 0</p>
                 </div>
                 <div class="card__expenses">
-                    <i class="fas fa-arrow-circle-down card__expenses--sign"></i>
+                    <img src="img/arrow-down-on-black-circular-background.png" class="card__expenses--sign">
                     <p class="card__expenses--text">Expenses</p>
-                    <p class="card__expenses--value">- 4000</p>
+                    <p class="card__expenses--value">- 0</p>
                 </div>
             </div>
-            <button class="btn">
-                <div class="sign">
-                    &#43;
-                </div>
-            </button>
+
+            <!-- <button class="btn">
+                <div class="sign"></div>
+            </button> -->
+
         </div>
 
         <div class="popup">
             <div class="budget-switch">
-                <input type="radio" name="budget" id="budget_expense" class="budget-switch-input" checked>
+                <input type="radio" name="budget" id="budget_expense" value="expense" class="budget-switch-input"
+                    checked>
                 <label for="budget_expense" class="budget-switch-label">Expense</label>
-                <input type="radio" name="budget" id="budget_income" class="budget-switch-input">
+                <input type="radio" name="budget" id="budget_income" value="income" class="budget-switch-input">
                 <label for="budget_income" class="budget-switch-label">Income</label>
             </div>
             <input type="text" class="budget-input budget-input-desc" placeholder="description">
             <input type="text" class="budget-input budget-input-val" placeholder="value">
             <button class="popup__btn">Add</button>
+            <span class="error error_desc">*only letters</span>
+            <span class="error error_val">*only numbers</span>
         </div>
+
+        <div class="items__container"></div>
+
+        <p class="copyright">created by <a href="https://github.com/AbdulrhmanJo">AbdulrhmanJo</a></p>
     </div>
 
-
-
-
+    <script src="js/interface.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/controller.js"></script>
 </body>
 
 </html>
